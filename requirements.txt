@@ -1,1 +1,1 @@
-
+# tutaj piszemy nazwy biblioteki i ich wersje w formacie ( numpy (1.6.5) )
