@@ -3,11 +3,7 @@ import networkx as nx
 import plotly.graph_objects as go
 import numpy as np
 
-# Defining the map boundaries
-#north, east, south, west = 52.371, 21.279, 52.094, 20.831
 
-# Downloading the map as a graph object
-#G = ox.graph_from_bbox(north, south, east, west, network_type='drive')
 G = ox.load_graphml('wwaroads.graphml')
 
 # define origin and desination locations
