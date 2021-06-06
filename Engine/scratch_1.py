@@ -86,6 +86,7 @@ def plot_path(lat, long, origin_point, destination_point):
 
     fig.show()
 
+
 def node_list_to_path(G, node_list):
     """
     Funkcja wywołująca listę z liniami pokrywających się z drogą
