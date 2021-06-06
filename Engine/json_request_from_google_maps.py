@@ -9,3 +9,6 @@ gmaps = googlemaps.Client(key=apikey)
 geocode_result = gmaps.geocode('Warsaw')
 aaaaaaaaa=1
 print(geocode_result)
+#radek siusiak
+a=1
+aleprovo=a+2
