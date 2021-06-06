@@ -1,5 +1,6 @@
-# tutaj piszemy nazwy biblioteki i ich wersje w formacie ( numpy (1.6.5) )
-sqlite3
+pipwin
+wheel
+fiona
 osmnx
 networkx
 pyqt5
