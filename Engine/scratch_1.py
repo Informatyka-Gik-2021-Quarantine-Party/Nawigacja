@@ -9,8 +9,10 @@ G = ox.load_graphml('wwaroads.graphml')
 
 # adres punktu początkowego i końcowego
 geolocator = Nominatim(user_agent="jakas_nazwa")
-origin = geolocator.geocode('Marszałkowska 1, Warsaw, Poland')
-destination = geolocator.geocode('Złotej Wilgi 10, Warsaw, Poland')
+a = 'Marszałkowska 1'
+origin = geolocator.geocode(f'{a}, Warsaw, Poland')
+b = 'Złotej Wilgi 10'
+destination = geolocator.geocode(f'{b}, Warsaw, Poland')
 
 # współrzędne punktu początkowego i końcowego
 origin_point = (origin.latitude, origin.longitude)
