@@ -3,25 +3,23 @@ import networkx as nx
 import plotly.graph_objects as go
 import numpy as np
 
-
+# załadowanie pliku z drogami dla Warszawy i okolicy
 G = ox.load_graphml('wwaroads.graphml')
 
-# define origin and desination locations
+# punkt początkowy i końcowy
 origin_point = (52.109, 21.213)
 destination_point = (52.298, 20.906)
 
-# get the nearest nodes to the locations
+# otrzymanie najbliższych punktów do drogi dla punktu początkowego i końcowego
 origin_node = ox.nearest_nodes(G, origin_point[1], origin_point[0])
 destination_node = ox.nearest_nodes(G, destination_point[1], destination_point[0])
 
+# otrzymanie najkrótszej drogi
 route = nx.shortest_path(G, origin_node, destination_node, weight='length')
 
-# getting coordinates of the nodes
-
-# we will store the longitudes and latitudes in following list
+# otrzymanie współrzędnych skrzyżowań
 long = []
 lat = []
-
 for i in route:
     point = G.nodes[i]
     long.append(point['x'])
@@ -30,20 +28,19 @@ for i in route:
 
 def plot_path(lat, long, origin_point, destination_point):
     """
-    Given a list of latitudes and longitudes, origin
-    and destination point, plots a path on a map
+    Funkcja pokazująca mapę z trasą dla danych punktu początkowego i końcowego
+    oraz współrzędnych skrzyżowań
 
-    Parameters
-    ----------
-    lat, long: list of latitudes and longitudes
-    origin_point, destination_point: co-ordinates of origin
-    and destination
-    Returns
-    -------
-    Nothing. Only shows the map.
+    INPUT:
+    lat, long         : [list]  : długości i szerokości geograficzne w listach
+    origin_point      : [tuple] : współrzędne punktu początkowego
+    destination_point : [tuple] : współrzędne punktu końcowego
+
+    OUTPUT:
+    Pokazanie mapy w plotly
     """
 
-    # adding the lines joining the nodes
+    # dodanie linii łączących punkty
     fig = go.Figure(go.Scattermapbox(
         name="Path",
         mode="lines",
@@ -52,7 +49,7 @@ def plot_path(lat, long, origin_point, destination_point):
         marker={'size': 10},
         line=dict(width=4.5, color='blue')))
 
-    # adding source marker
+    # tworzenie stylu dla punktu początkowego na mapie
     fig.add_trace(go.Scattermapbox(
         name="Source",
         mode="markers",
@@ -60,7 +57,7 @@ def plot_path(lat, long, origin_point, destination_point):
         lat=[origin_point[0]],
         marker={'size': 12, 'color': "red"}))
 
-    # adding destination marker
+    # tworzenie stylu dla punktu końcowego na mapie
     fig.add_trace(go.Scattermapbox(
         name="Destination",
         mode="markers",
@@ -68,11 +65,11 @@ def plot_path(lat, long, origin_point, destination_point):
         lat=[destination_point[0]],
         marker={'size': 12, 'color': 'green'}))
 
-    # getting center for plots:
+    # otrzymanie współrzędnych dla środka trasy
     lat_center = np.mean(lat)
     long_center = np.mean(long)
 
-    # defining the layout using mapbox_style
+    # tworzenie stylu mapy
     fig.update_layout(mapbox_style="open-street-map", mapbox_center_lat=30, mapbox_center_lon=-80)
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0},
                       mapbox={
@@ -83,31 +80,26 @@ def plot_path(lat, long, origin_point, destination_point):
 
 def node_list_to_path(G, node_list):
     """
-    Given a list of nodes, return a list of lines that together follow the path
-    defined by the list of nodes.
-    Parameters
-    ----------
-    G : networkx multidigraph
-    route : list
-        the route as a list of nodes
-    Returns
-    -------
-    lines : list of lines given as pairs ( (x_start, y_start), (x_stop, y_stop) )
+    Funkcja wywołująca listę z liniami pokrywających się z drogą
+    dla danych współrzędnych skrzyżowań
+
+    INPUT:
+    G         : [graphml] : plik z drogami
+    node_list : [list]    : lista ze współrzędnymi skrzyżowań przy drodze
+
+    OUTPUT:
+    lines : [list] : lista współrzędnych punktów pokrywających się z drogą
+                     w formacie ((x_start, y_start), (x_stop, y_stop))
     """
     edge_nodes = list(zip(node_list[:-1], node_list[1:]))
     lines = []
     for u, v in edge_nodes:
-        # if there are parallel edges, select the shortest in length
         data = min(G.get_edge_data(u, v).values(), key=lambda x: x['length'])
 
-        # if it has a geometry attribute (ie, a list of line segments)
         if 'geometry' in data:
-            # add them to the list of lines to plot
             xs, ys = data['geometry'].xy
             lines.append(list(zip(xs, ys)))
         else:
-            # if it doesn't have a geometry attribute, the edge is a straight
-            # line from node to node
             x1 = G.nodes[u]['x']
             y1 = G.nodes[u]['y']
             x2 = G.nodes[v]['x']
@@ -116,8 +108,9 @@ def node_list_to_path(G, node_list):
             lines.append(line)
     return lines
 
-# getting the list of coordinates from the path (which is a list of nodes)
+
 lines = node_list_to_path(G, route)
+
 
 long2 = []
 lat2 = []
@@ -132,6 +125,3 @@ for i in range(len(lines)):
 
 
 plot_path(lat2, long2, origin_point, destination_point)
-
-# podobno czas podróży
-# ox.add_edge_travel_times(G)
