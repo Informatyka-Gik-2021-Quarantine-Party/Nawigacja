@@ -2,6 +2,7 @@ import osmnx as ox
 import networkx as nx
 import plotly.graph_objects as go
 import numpy as np
+from math import sin, cos, sqrt, atan2, radians
 
 # załadowanie pliku z drogami dla Warszawy i okolicy
 G = ox.load_graphml('wwaroads.graphml')
@@ -87,8 +88,8 @@ def node_list_to_path(G, node_list):
     dla danych współrzędnych skrzyżowań
 
     INPUT:
-    G         : [graphml] : plik z drogami
-    node_list : [list]    : lista ze współrzędnymi skrzyżowań przy drodze
+    G         : [networkx.MultiDiGraph] : plik z drogami
+    node_list : [list]                  : lista ze współrzędnymi skrzyżowań przy drodze
 
     OUTPUT:
     lines : [list] : lista współrzędnych punktów pokrywających się z drogą
@@ -129,5 +130,19 @@ for i in range(len(lines)):
 
 plot_path(lat2, long2, origin_point, destination_point)
 
-#routeG = ox.geocode('Marszałkowska 1, Warsaw, Poland')
-#print(routeG)
+# obliczenie długości trasy
+dist = 0
+R = 6373.0
+for i in range(len(long2)-1):
+    latA = radians(lat2[i])
+    latB = radians(lat2[i+1])
+    lonA = radians(long2[i])
+    lonB = radians(long2[i+1])
+    dlon = lonB - lonA
+    dlat = latB - latA
+    a = sin(dlat / 2) ** 2 + cos(latA) * cos(latB) * sin(dlon / 2) ** 2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+    distance = R * c
+    dist += distance
+
+print(dist)
