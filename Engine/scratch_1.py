@@ -145,4 +145,3 @@ for i in range(len(long2)-1):
     distance = R * c
     dist += distance
 
-print(dist)
