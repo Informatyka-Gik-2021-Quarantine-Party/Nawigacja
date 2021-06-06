@@ -2,21 +2,15 @@ import osmnx as ox
 import networkx as nx
 import plotly.graph_objects as go
 import numpy as np
-from geopy.geocoders import Nominatim
 
 # załadowanie pliku z drogami dla Warszawy i okolicy
 G = ox.load_graphml('wwaroads.graphml')
 
-# adres punktu początkowego i końcowego
-geolocator = Nominatim(user_agent="jakas_nazwa")
+# adres i współrzędne punktu początkowego i końcowego
 a = 'Marszałkowska 1'
-origin = geolocator.geocode(f'{a}, Warsaw, Poland')
+origin_point = ox.geocode(f'{a}, Warsaw, Poland')
 b = 'Złotej Wilgi 10'
-destination = geolocator.geocode(f'{b}, Warsaw, Poland')
-
-# współrzędne punktu początkowego i końcowego
-origin_point = (origin.latitude, origin.longitude)
-destination_point = (destination.latitude, destination.longitude)
+destination_point = ox.geocode(f'{b}, Warsaw, Poland')
 
 # otrzymanie najbliższych punktów do drogi dla punktu początkowego i końcowego
 origin_node = ox.nearest_nodes(G, origin_point[1], origin_point[0])
@@ -134,3 +128,6 @@ for i in range(len(lines)):
 
 
 plot_path(lat2, long2, origin_point, destination_point)
+
+#routeG = ox.geocode('Marszałkowska 1, Warsaw, Poland')
+#print(routeG)
