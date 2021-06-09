@@ -9,9 +9,18 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import sys
 
+from PyQt5.QtWidgets import (
+    QFormLayout,
+    QLineEdit,
+    QStackedLayout,
+    QVBoxLayout,
+    QWidget,
+)
 
-class Ui_MainWindow(object):
+class Ui_MainWindow(QWidget):
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1165, 740)
@@ -53,11 +62,34 @@ class Ui_MainWindow(object):
         font.setPointSize(16)
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
-        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox.setGeometry(QtCore.QRect(50, 50, 261, 31))
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
+
+
+
+        layout = QVBoxLayout()
+        self.setLayout(layout)
+        self.comboBox = QtWidgets.QComboBox()
+        self.comboBox.setGeometry(QtCore.QRect(50, 50, 260, 30))
+        self.comboBox.addItems(["wsp", "adrs"])
+        self.comboBox.activated.connect(self.switchPage)
+        self.stackedLayout = QStackedLayout()
+
+        self.page1 = QWidget()
+        self.page1Layout = QFormLayout()
+        self.page1Layout.addRow("Fi", QLineEdit())
+        self.page1Layout.addRow("Lambda", QLineEdit())
+        self.page1.setLayout(self.page1Layout)
+        self.stackedLayout.addWidget(self.page1)
+
+        self.page2 = QWidget()
+        self.page2Layout = QFormLayout()
+        self.page2Layout.addRow("Początek drogi:", QLineEdit())
+        self.page2Layout.addRow("Koniec drogi:", QLineEdit())
+        self.page2.setLayout(self.page2Layout)
+        self.stackedLayout.addWidget(self.page2)
+
+        layout.addWidget(self.comboBox)
+        layout.addLayout(self.stackedLayout)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1165, 21))
@@ -70,6 +102,9 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+    def switchPage(self):
+        self.stackedLayout.setCurrentIndex(self.comboBox.currentIndex())
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Aplikacja nawigacyjna"))
@@ -79,3 +114,12 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Szukaj po:"))
         self.comboBox.setItemText(0, _translate("MainWindow", "Po Adresie"))
         self.comboBox.setItemText(1, _translate("MainWindow", "Po Współrzędnych"))
+
+if __name__=='__main__':
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

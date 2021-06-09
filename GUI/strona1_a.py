@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'strona1_a.ui'
+# Form implementation generated from reading ui file 'probacombobox.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -9,9 +9,20 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import pyqtSlot
+import sys
 
+from PyQt5.QtWidgets import (
+    QApplication,
+    QComboBox,
+    QFormLayout,
+    QLineEdit,
+    QStackedLayout,
+    QVBoxLayout,
+    QWidget,
+)
 
-class Ui_MainWindow(object):
+class Ui_MainWindow(object, QWidget):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1075, 740)
@@ -68,6 +79,16 @@ class Ui_MainWindow(object):
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
         MainWindow.setCentralWidget(self.centralwidget)
+
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(210, 160, 201, 141))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(16)
+        self.label_4.setFont(font)
+        self.label_4.setObjectName("label_4")
+        MainWindow.setCentralWidget(self.centralwidget)
+
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1075, 26))
         self.menubar.setObjectName("menubar")
@@ -75,9 +96,9 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -88,6 +109,8 @@ class Ui_MainWindow(object):
         self.radioButton.setText(_translate("MainWindow", "adresie"))
         self.radioButton_2.setText(_translate("MainWindow", "współrzędnych"))
         self.label_3.setText(_translate("MainWindow", "Szukaj po:"))
+
+    def
 
 if __name__=='__main__':
     import sys
