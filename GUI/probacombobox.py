@@ -9,12 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import pyqtSlot
 import sys
 
 from PyQt5.QtWidgets import (
-    QApplication,
-    QComboBox,
     QFormLayout,
     QLineEdit,
     QStackedLayout,
@@ -22,34 +19,35 @@ from PyQt5.QtWidgets import (
     QWidget,
 )
 
-class Ui_MainWindow(object, QWidget):
+class Ui_MainWindow(QWidget):
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1075, 740)
+        MainWindow.resize(1165, 740)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(100, 330, 171, 71))
+        self.label.setGeometry(QtCore.QRect(40, 150, 171, 71))
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
         font.setPointSize(14)
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(100, 250, 201, 51))
+        self.label_2.setGeometry(QtCore.QRect(40, 100, 201, 51))
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
         font.setPointSize(14)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(290, 350, 191, 31))
+        self.lineEdit.setGeometry(QtCore.QRect(250, 170, 191, 31))
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(290, 260, 191, 31))
+        self.lineEdit_2.setGeometry(QtCore.QRect(250, 110, 191, 31))
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(90, 480, 331, 61))
+        self.pushButton.setGeometry(QtCore.QRect(30, 230, 331, 61))
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
         font.setPointSize(15)
@@ -57,48 +55,55 @@ class Ui_MainWindow(object, QWidget):
         font.setWeight(75)
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
-        self.radioButton = QtWidgets.QRadioButton(self.centralwidget)
-        self.radioButton.setGeometry(QtCore.QRect(110, 100, 151, 51))
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(13)
-        self.radioButton.setFont(font)
-        self.radioButton.setObjectName("radioButton")
-        self.radioButton_2 = QtWidgets.QRadioButton(self.centralwidget)
-        self.radioButton_2.setGeometry(QtCore.QRect(110, 160, 171, 31))
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(13)
-        self.radioButton_2.setFont(font)
-        self.radioButton_2.setObjectName("radioButton_2")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(110, 60, 101, 41))
+        self.label_3.setGeometry(QtCore.QRect(60, 10, 101, 41))
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
         font.setPointSize(16)
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
-        MainWindow.setCentralWidget(self.centralwidget)
 
-        self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(210, 160, 201, 141))
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(16)
-        self.label_4.setFont(font)
-        self.label_4.setObjectName("label_4")
-        MainWindow.setCentralWidget(self.centralwidget)
 
+
+        layout = QVBoxLayout()
+        self.setLayout(layout)
+        self.comboBox = QtWidgets.QComboBox()
+        self.comboBox.setGeometry(QtCore.QRect(50, 50, 260, 30))
+        self.comboBox.addItems(["wsp", "adrs"])
+        self.comboBox.activated.connect(self.switchPage)
+        self.stackedLayout = QStackedLayout()
+
+        self.page1 = QWidget()
+        self.page1Layout = QFormLayout()
+        self.page1Layout.addRow("Fi", QLineEdit())
+        self.page1Layout.addRow("Lambda", QLineEdit())
+        self.page1.setLayout(self.page1Layout)
+        self.stackedLayout.addWidget(self.page1)
+
+        self.page2 = QWidget()
+        self.page2Layout = QFormLayout()
+        self.page2Layout.addRow("Początek drogi:", QLineEdit())
+        self.page2Layout.addRow("Koniec drogi:", QLineEdit())
+        self.page2.setLayout(self.page2Layout)
+        self.stackedLayout.addWidget(self.page2)
+
+        layout.addWidget(self.comboBox)
+        layout.addLayout(self.stackedLayout)
+
+        MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1075, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1165, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+    def switchPage(self):
+        self.stackedLayout.setCurrentIndex(self.comboBox.currentIndex())
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -106,11 +111,9 @@ class Ui_MainWindow(object, QWidget):
         self.label.setText(_translate("MainWindow", "Koniec podróży:"))
         self.label_2.setText(_translate("MainWindow", "Początek podróży:"))
         self.pushButton.setText(_translate("MainWindow", "Szukaj najkrótszej trasy"))
-        self.radioButton.setText(_translate("MainWindow", "adresie"))
-        self.radioButton_2.setText(_translate("MainWindow", "współrzędnych"))
         self.label_3.setText(_translate("MainWindow", "Szukaj po:"))
-
-    def
+        self.comboBox.setItemText(0, _translate("MainWindow", "Po Adresie"))
+        self.comboBox.setItemText(1, _translate("MainWindow", "Po Współrzędnych"))
 
 if __name__=='__main__':
     import sys
