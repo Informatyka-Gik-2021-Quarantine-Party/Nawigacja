@@ -5,3 +5,5 @@ osmnx
 networkx
 pyqt5
 pyqt5-tools
+json5 0.9.5
+urllib3 1.26.5
