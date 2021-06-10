@@ -35,7 +35,7 @@ def plot_path(lat, long, origin_point, destination_point):
 
     # dodanie linii łączących punkty
     fig = go.Figure(go.Scattermapbox(
-        name="Path",
+        name="Trasa",
         mode="lines",
         lon=long,
         lat=lat,
@@ -44,7 +44,7 @@ def plot_path(lat, long, origin_point, destination_point):
 
     # tworzenie stylu dla punktu początkowego na mapie
     fig.add_trace(go.Scattermapbox(
-        name="Source",
+        name="Początek",
         mode="markers",
         lon=[origin_point[1]],
         lat=[origin_point[0]],
@@ -52,7 +52,7 @@ def plot_path(lat, long, origin_point, destination_point):
 
     # tworzenie stylu dla punktu końcowego na mapie
     fig.add_trace(go.Scattermapbox(
-        name="Destination",
+        name="Koniec",
         mode="markers",
         lon=[destination_point[1]],
         lat=[destination_point[0]],
@@ -102,7 +102,7 @@ def node_list_to_path(G, node_list):
             lines.append(line)
     return lines
 
-def show_map(G, a, b):
+def show_map(G, a, b, map_method):
     origin_point = ox.geocode(f'{a}, Warsaw, Poland')
     destination_point = ox.geocode(f'{b}, Warsaw, Poland')
 
@@ -111,7 +111,7 @@ def show_map(G, a, b):
     destination_node = ox.nearest_nodes(G, destination_point[1], destination_point[0])
 
     # otrzymanie najkrótszej drogi
-    route = nx.shortest_path(G, origin_node, destination_node, weight='length')
+    route = nx.shortest_path(G, origin_node, destination_node, weight=map_method)
 
     # otrzymanie współrzędnych skrzyżowań
     long = []
@@ -150,6 +150,7 @@ def show_map(G, a, b):
         c = 2 * atan2(sqrt(a), sqrt(1 - a))
         distance = R * c
         dist += distance
+    return dist
 
 
 # załadowanie pliku z drogami dla Warszawy i okolicy
@@ -188,24 +189,51 @@ class Ui_Dialog(object):
         self.widget.setGeometry(QtCore.QRect(410, 20, 541, 521))
         self.widget.setObjectName("widget")
 
-        self.pushButton.clicked.connect(self.show_path)
+        self.pushButton.clicked.connect(self.show_path_shortest)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
+    def show_path_shortest(self):
+        a = self.lineEdit.text()
+        b = self.lineEdit_2.text()
+        map_method = "length"
+        if a == '' or b == '':
+            msg = QtWidgets.QMessageBox()
+            msg.setIcon(QtWidgets.QMessageBox.Critical)
+            msg.setText("Error")
+            msg.setInformativeText('Proszę wpisać adres!')
+            msg.setWindowTitle("Error")
+            msg.exec_()
+
+        try:
+            dist = show_map(G, a, b, map_method)
+            self.label_4.setText(f"Długość: {dist:.2} km")
+        except ValueError:
+            msg = QtWidgets.QMessageBox()
+            msg.setIcon(QtWidgets.QMessageBox.Critical)
+            msg.setText("Error")
+            msg.setInformativeText('Zły adres! Spróbuj jeszcze raz.')
+            msg.setWindowTitle("Error")
+            msg.exec_()
+        # except a == '' or b == '':
+        #     msg = QtWidgets.QMessageBox()
+        #     msg.setIcon(QtWidgets.QMessageBox.Critical)
+        #     msg.setText("Error")
+        #     msg.setInformativeText('Proszę wpisać adres!')
+        #     msg.setWindowTitle("Error")
+        #     msg.exec_()
+
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "Nawigacja czy coś nwm"))
+        self.label.setText(_translate("Dialog", "Nawigacja"))
         self.label_2.setText(_translate("Dialog", "Punkt początkowy"))
         self.label_3.setText(_translate("Dialog", "Punkt końcowy"))
         self.pushButton.setText(_translate("Dialog", "Szukaj trasy..."))
         self.label_4.setText(_translate("Dialog", "Długość:"))
 
-    def show_path(self):
-        a = self.lineEdit_2.text()
-        b = self.lineEdit.text()
-        show_map(G, a, b)
+
 
 if __name__=='__main__':
     import sys
