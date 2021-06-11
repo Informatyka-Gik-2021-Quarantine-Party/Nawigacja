@@ -5,10 +5,7 @@ Aplikacja do wskazywania najkrótszej i domyślnej trasy, oblicza odległość m
  #   
 **Instalacja:**    
 Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
-#
-**Użyte algorytmy:**     
- Została użyta biblioteka Networkx. 
-#
+ #
 **Instrukcja:**
 
 1. W aplikacji 'Nawigacja Warszawa' należy wybrać Trase oraz Styl Mapy.
@@ -18,6 +15,7 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
 5. Z prawej strony pokaże sie Trasa jaką wybrał użytkownik.
 6. W lewym dolnym rogu obliczy się odległość między punktami w km.
 
+#
 **Sprawozdanie:**
 1. Opis działania kodu:
 
@@ -56,7 +54,7 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
         
         
       **b) Funkcja wywołująca listę z liniami pokrywających się z drogą
-    dla danych współrzędnych skrzyżowań** - otwiera plik z drogami, przyjmuje wartości ze współrzędnymi skrzyżowań przy drodze w listach oraz przyjmuje wartości ze współrzędnymi punktów pokrywających się z drogą w różnych formatach w listach
+    dla danych współrzędnych skrzyżowań** - otwiera plik z drogami, przyjmuje wartości ze współrzędnymi skrzyżowań przy drodze w listach oraz przyjmuje wartości ze współrzędnymi     punktów pokrywających się z drogą w różnych formatach w listach
     
     Zdefiniowanie funkcji:
                
@@ -107,6 +105,15 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
         
       ![image](https://user-images.githubusercontent.com/83244469/121742669-6e8b6600-cb00-11eb-9020-e5b4b946e597.png)
 
+      **Interfejs użytkownika**
+      
+      W oknie aplikacji zostały zawarte niezbędne komponenty do działania programu.
+      Okno, gdzie użytkownik wspisuję swoją lokalizację i lokalizację do, której chciałby znależć najbliższą trasę lub domyślną.
+      Użytkownik ma możliwość wybory stylu mapy na, której zostanie zaprezentowana droga.
+      Dodatkową funkcją powodujacą, że aplikacja jest bardziej atrakcyjna jest obliczanie długości trasy.
+      Aplikacja ukazuje na mapie punkt początkowy i końcowy oraz współrzędne geograficzne.
+      
+      ![obraz](https://user-images.githubusercontent.com/83244425/121745951-6255d780-cb05-11eb-9f96-c84886ba0abc.png)
 
         
 
