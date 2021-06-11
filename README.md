@@ -53,6 +53,8 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
         
         ![image](https://user-images.githubusercontent.com/83244370/121737424-2157c600-caf9-11eb-9f17-cab7ea8f6264.png)
         
+        b)**Funkcja wprowadzająca dane do stworzenia mapy i obliczająca długość trasy** - otwiera ona pilk z drogami, przyjmuje adres lub nazwę miejsca pkt. początkowego lub końcowego, określa typ stylu drogi oraz mapy, rysuje wykres w Plotly i oblicza długość drogi
+        
         Otrzymanie najbliższych punktów do drogi dla punktu początkowego i końcowego:
         
         ![image](https://user-images.githubusercontent.com/83244469/121742250-ddb48a80-caff-11eb-82c6-81eb27d0aa32.png)
