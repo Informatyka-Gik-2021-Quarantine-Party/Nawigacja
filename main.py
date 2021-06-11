@@ -52,11 +52,11 @@ def plot_path(lat, long, origin_point, destination_point, map_style):
     long_center = np.mean(long)
 
     # tworzenie stylu mapy
-    fig.update_layout(mapbox_style=map_style, mapbox_center_lat=30, mapbox_center_lon=-80)
+    fig.update_layout(mapbox_style=map_style)
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0},
                       mapbox={
                           'center': {'lat': lat_center, 'lon': long_center},
-                          'zoom': 13})
+                          'zoom': 11})
 
     return fig
 
