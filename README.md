@@ -53,7 +53,21 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
         
         ![image](https://user-images.githubusercontent.com/83244370/121737424-2157c600-caf9-11eb-9f17-cab7ea8f6264.png)
         
-        b)**Funkcja wprowadzająca dane do stworzenia mapy i obliczająca długość trasy** - otwiera ona pilk z drogami, przyjmuje adres lub nazwę miejsca pkt. początkowego lub końcowego, określa typ stylu drogi oraz mapy, rysuje wykres w Plotly i oblicza długość drogi
+        
+      **b) Funkcja wywołująca listę z liniami pokrywających się z drogą
+    dla danych współrzędnych skrzyżowań** - otwiera plik z drogami, przyjmuje wartości ze współrzędnymi skrzyżowań przy drodze w listach oraz przyjmuje wartości ze współrzędnymi punktów pokrywających się z drogą w różnych formatach w listach
+    
+    Zdefiniowanie funkcji:
+               
+    ![image](https://user-images.githubusercontent.com/83244469/121744291-f7a39c80-cb02-11eb-80a0-d3dfe6f5f8d7.png)
+
+        
+        **c) Funkcja wprowadzająca dane do stworzenia mapy i obliczająca długość trasy ** - otwiera ona pilk z drogami, przyjmuje adres lub nazwę miejsca pkt. początkowego lub końcowego, określa typ stylu drogi oraz mapy, rysuje wykres w Plotly i oblicza długość drogi
+        
+        Zdefiniowanie funkcji:
+        
+        ![image](https://user-images.githubusercontent.com/83244469/121743894-5a486880-cb02-11eb-8f1f-0ac72c07cf66.png)
+
         
         Otrzymanie najbliższych punktów do drogi dla punktu początkowego i końcowego:
         
