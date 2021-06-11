@@ -55,23 +55,36 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
         
         Otrzymanie najbliższych punktów do drogi dla punktu początkowego i końcowego:
         
-        ![image](https://user-images.githubusercontent.com/83244469/121740912-1489a100-cafe-11eb-8eae-8ec5d24b23b3.png)
+        ![image](https://user-images.githubusercontent.com/83244469/121742250-ddb48a80-caff-11eb-82c6-81eb27d0aa32.png)
+
         
         Otrzymanie najkrótszej drogi:
         
-        ![image](https://user-images.githubusercontent.com/83244469/121741065-46026c80-cafe-11eb-910c-0187f233da1e.png)
+        ![image](https://user-images.githubusercontent.com/83244469/121742301-ef962d80-caff-11eb-8f07-dc9fd2a5b112.png)
+
         
         Otrzymanie współrzędnych skrzyżowań:
         
-        ![image](https://user-images.githubusercontent.com/83244469/121741157-67635880-cafe-11eb-9521-acb012083543.png)
+        ![image](https://user-images.githubusercontent.com/83244469/121742361-02106700-cb00-11eb-8461-6c554301097e.png)
+
+        Otrzymanie współrzędnych dla każdego punktu załamania drogi:
+        
+        ![image](https://user-images.githubusercontent.com/83244469/121742497-2f5d1500-cb00-11eb-928d-e11e35d08c4c.png)
+
+        Tworzenie wykresu w Plotly:
+        
+        ![image](https://user-images.githubusercontent.com/83244469/121742564-48fe5c80-cb00-11eb-81a5-5dd9e132caf4.png)
+
         
         Obliczenie długości trasy:
         
-        ![image](https://user-images.githubusercontent.com/83244469/121741250-8e218f00-cafe-11eb-9e79-7e1862221ab2.png)
+        ![image](https://user-images.githubusercontent.com/83244469/121742611-574c7880-cb00-11eb-9c3d-8bf8e2abcb6e.png)
+
         
         Załadowanie pliku z drogami dla Warszawy i okolicy:
         
-        ![image](https://user-images.githubusercontent.com/83244469/121741358-b4472f00-cafe-11eb-950a-f214da0325ae.png)
+        ![image](https://user-images.githubusercontent.com/83244469/121742669-6e8b6600-cb00-11eb-9020-e5b4b946e597.png)
+
 
         
 
