@@ -22,7 +22,7 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
 
    * Zaimportowanie danych bibliotek.
 
-      ![image](https://user-images.githubusercontent.com/83244370/121734016-7fce7580-caf4-11eb-9f83-69f513def555.png)
+      ![image](https://user-images.githubusercontent.com/83244370/121735357-4dbe1300-caf6-11eb-813c-b5bb89af406b.png)
 
 
    * Utworzenie funkcji
