@@ -18,4 +18,4 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
 7. Z prawej strony pokaże sie Trasa jaką użytkownik wybrał.
 8. W lewym dolnym rodu oliczy sie odległość między punktami w km.
 
-Tomek Kuba Szymon
+
