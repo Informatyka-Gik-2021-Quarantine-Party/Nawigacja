@@ -52,6 +52,33 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
         Utworzenie stylu dla mapy oraz zakończenie funkcji:
         
         ![image](https://user-images.githubusercontent.com/83244370/121737424-2157c600-caf9-11eb-9f17-cab7ea8f6264.png)
+        
+        Otrzymanie najbliższych punktów do drogi dla punktu początkowego i końcowego:
+        
+        ![image](https://user-images.githubusercontent.com/83244469/121740912-1489a100-cafe-11eb-8eae-8ec5d24b23b3.png)
+        
+        Otrzymanie najkrótszej drogi:
+        
+        ![image](https://user-images.githubusercontent.com/83244469/121741065-46026c80-cafe-11eb-910c-0187f233da1e.png)
+        
+        Otrzymanie współrzędnych skrzyżowań:
+        
+        ![image](https://user-images.githubusercontent.com/83244469/121741157-67635880-cafe-11eb-9521-acb012083543.png)
+        
+        Obliczenie długości trasy:
+        
+        ![image](https://user-images.githubusercontent.com/83244469/121741250-8e218f00-cafe-11eb-9e79-7e1862221ab2.png)
+        
+        Załadowanie pliku z drogami dla Warszawy i okolicy:
+        
+        ![image](https://user-images.githubusercontent.com/83244469/121741358-b4472f00-cafe-11eb-950a-f214da0325ae.png)
+
+        
+
+        
+
+
+
 
 
 
