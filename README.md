@@ -18,4 +18,6 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
 6. W lewym dolnym rogu obliczy się odległość między punktami w km.
 
 **Sprawozdanie:**
+
+
 ![image](https://user-images.githubusercontent.com/83244370/121733517-e0a97e00-caf3-11eb-8157-a3912eb5bde3.png)
