@@ -5,10 +5,7 @@ Aplikacja do wskazywania najkrótszej i domyślnej trasy, oblicza odległość m
  #   
 **Instalacja:**    
 Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
-#
-**Użyte algorytmy:**     
- Została użyta biblioteka Networkx. 
-#
+ #
 **Instrukcja:**
 
 1. W aplikacji 'Nawigacja Warszawa' należy wybrać Trase oraz Styl Mapy.
@@ -18,6 +15,7 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
 5. Z prawej strony pokaże sie Trasa jaką wybrał użytkownik.
 6. W lewym dolnym rogu obliczy się odległość między punktami w km.
 
+#
 **Sprawozdanie:**
 1. Opis działania kodu:
 
@@ -56,7 +54,7 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
         
         
       **b) Funkcja wywołująca listę z liniami pokrywających się z drogą
-    dla danych współrzędnych skrzyżowań** - otwiera plik z drogami, przyjmuje wartości ze współrzędnymi skrzyżowań przy drodze w listach oraz przyjmuje wartości ze współrzędnymi punktów pokrywających się z drogą w różnych formatach w listach
+    dla danych współrzędnych skrzyżowań** - otwiera plik z drogami, przyjmuje wartości ze współrzędnymi skrzyżowań przy drodze w listach oraz przyjmuje wartości ze współrzędnymi     punktów pokrywających się z drogą w różnych formatach w listach
     
     Zdefiniowanie funkcji:
                
