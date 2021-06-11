@@ -27,6 +27,6 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
 
    * Utworzenie funkcji:
 
-      a) 
+      a) Funkcja kreująca wykres z trasą dla danych punktu początkowego i końcowego oraz współrzędnych skrzyżowań
       
-      ![image](https://user-images.githubusercontent.com/83244370/121735991-36cbf080-caf7-11eb-8d6c-a3086a2770a7.png)
+         *Zdefiniowanie funkcji
