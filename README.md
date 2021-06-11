@@ -20,9 +20,13 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
 **Sprawozdanie:**
 1. Opis działania kodu:
 
-   * Zaimportowanie danych bibliotek.
+   * Zaimportowanie danych bibliotek:
 
       ![image](https://user-images.githubusercontent.com/83244370/121735357-4dbe1300-caf6-11eb-813c-b5bb89af406b.png)
 
 
-   * Utworzenie funkcji
+   * Utworzenie funkcji:
+
+      a) 
+      
+      ![image](https://user-images.githubusercontent.com/83244370/121735991-36cbf080-caf7-11eb-8d6c-a3086a2770a7.png)
