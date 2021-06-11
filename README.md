@@ -60,46 +60,51 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
     Zdefiniowanie funkcji:
                
     ![image](https://user-images.githubusercontent.com/83244469/121744291-f7a39c80-cb02-11eb-80a0-d3dfe6f5f8d7.png)
+    
+    Otrzymanie współrzędnych skrzyżowań przy drodze:
+    
+    ![image](https://user-images.githubusercontent.com/83244469/121744656-831d2d80-cb03-11eb-8431-ac2b2d9862f8.png)
+
 
         
-        **c) Funkcja wprowadzająca dane do stworzenia mapy i obliczająca długość trasy ** - otwiera ona pilk z drogami, przyjmuje adres lub nazwę miejsca pkt. początkowego lub końcowego, określa typ stylu drogi oraz mapy, rysuje wykres w Plotly i oblicza długość drogi
+     **c) Funkcja wprowadzająca dane do stworzenia mapy i obliczająca długość trasy** - otwiera ona pilk z drogami, przyjmuje adres lub nazwę miejsca pkt. początkowego lub końcowego, określa typ stylu drogi oraz mapy, rysuje wykres w Plotly i oblicza długość drogi
         
-        Zdefiniowanie funkcji:
+      Zdefiniowanie funkcji:
         
-        ![image](https://user-images.githubusercontent.com/83244469/121743894-5a486880-cb02-11eb-8f1f-0ac72c07cf66.png)
+      ![image](https://user-images.githubusercontent.com/83244469/121743894-5a486880-cb02-11eb-8f1f-0ac72c07cf66.png)
 
         
-        Otrzymanie najbliższych punktów do drogi dla punktu początkowego i końcowego:
+      Otrzymanie najbliższych punktów do drogi dla punktu początkowego i końcowego:
         
-        ![image](https://user-images.githubusercontent.com/83244469/121742250-ddb48a80-caff-11eb-82c6-81eb27d0aa32.png)
+      ![image](https://user-images.githubusercontent.com/83244469/121742250-ddb48a80-caff-11eb-82c6-81eb27d0aa32.png)
 
         
-        Otrzymanie najkrótszej drogi:
+      Otrzymanie najkrótszej drogi:
         
-        ![image](https://user-images.githubusercontent.com/83244469/121742301-ef962d80-caff-11eb-8f07-dc9fd2a5b112.png)
+      ![image](https://user-images.githubusercontent.com/83244469/121742301-ef962d80-caff-11eb-8f07-dc9fd2a5b112.png)
 
         
-        Otrzymanie współrzędnych skrzyżowań:
+      Otrzymanie współrzędnych skrzyżowań:
         
-        ![image](https://user-images.githubusercontent.com/83244469/121742361-02106700-cb00-11eb-8461-6c554301097e.png)
+      ![image](https://user-images.githubusercontent.com/83244469/121742361-02106700-cb00-11eb-8461-6c554301097e.png)
 
-        Otrzymanie współrzędnych dla każdego punktu załamania drogi:
+      Otrzymanie współrzędnych dla każdego punktu załamania drogi:
         
-        ![image](https://user-images.githubusercontent.com/83244469/121742497-2f5d1500-cb00-11eb-928d-e11e35d08c4c.png)
+      ![image](https://user-images.githubusercontent.com/83244469/121742497-2f5d1500-cb00-11eb-928d-e11e35d08c4c.png)
 
-        Tworzenie wykresu w Plotly:
+      Tworzenie wykresu w Plotly:
         
-        ![image](https://user-images.githubusercontent.com/83244469/121742564-48fe5c80-cb00-11eb-81a5-5dd9e132caf4.png)
-
-        
-        Obliczenie długości trasy:
-        
-        ![image](https://user-images.githubusercontent.com/83244469/121742611-574c7880-cb00-11eb-9c3d-8bf8e2abcb6e.png)
+      ![image](https://user-images.githubusercontent.com/83244469/121742564-48fe5c80-cb00-11eb-81a5-5dd9e132caf4.png)
 
         
-        Załadowanie pliku z drogami dla Warszawy i okolicy:
+      Obliczenie długości trasy:
         
-        ![image](https://user-images.githubusercontent.com/83244469/121742669-6e8b6600-cb00-11eb-9020-e5b4b946e597.png)
+      ![image](https://user-images.githubusercontent.com/83244469/121742611-574c7880-cb00-11eb-9c3d-8bf8e2abcb6e.png)
+
+        
+      Załadowanie pliku z drogami dla Warszawy i okolicy:
+        
+      ![image](https://user-images.githubusercontent.com/83244469/121742669-6e8b6600-cb00-11eb-9020-e5b4b946e597.png)
 
 
         
