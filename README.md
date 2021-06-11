@@ -25,4 +25,4 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
       ![image](https://user-images.githubusercontent.com/83244370/121734016-7fce7580-caf4-11eb-9f83-69f513def555.png)
 
 
-   * 
+   * Utworzenie funkcji
