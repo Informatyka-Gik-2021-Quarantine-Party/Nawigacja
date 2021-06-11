@@ -10,6 +10,7 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
  Została użyta biblioteka Networkx. 
 #
 **Instrukcja:**
+
 1. W aplikacji 'Nawigacja Warszawa' należy wybrać Trase oraz Styl Mapy.
 2. Wpisać punkt początkowy, który na mapie pokazuje się jako zielona kropka.
 3. Następnie wpisać punkt końcowy, bedzie to czerwona kropka.
@@ -110,6 +111,7 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
         
 
         
+
 
 
 
