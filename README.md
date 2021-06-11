@@ -107,6 +107,13 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
         
       ![image](https://user-images.githubusercontent.com/83244469/121742669-6e8b6600-cb00-11eb-9020-e5b4b946e597.png)
 
+      **Interfejs użytkownika**
+      W oknie aplikacji zostały zawarte niezbędne komponenty do działania programu.
+      Okno, gdzie użytkownik wspisuję swoją lokalizację i lokalizację do, której chciałby znależć najbliższą trasę lub domyślną.
+      Użytkownik ma możliwość wybory stylu mapy na, której zostanie zaprezentowana droga.
+      Dodatkową funkcją powodujacą, że aplikacja jest bardziej atrakcyjna jest obliczanie długości trasy.
+      Aplikacja ukazuje na mapie punkt początkowy i końcowy oraz współrzędne geograficzne.
+      ![obraz](https://user-images.githubusercontent.com/83244425/121745951-6255d780-cb05-11eb-9f96-c84886ba0abc.png)
 
         
 
