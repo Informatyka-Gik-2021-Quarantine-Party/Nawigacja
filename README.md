@@ -114,6 +114,7 @@ Instalacja bibliotek python (lista bibliotek w pliku requirements.txt).
       Użytkownik ma możliwość wybory stylu mapy na, której zostanie zaprezentowana droga.
       Dodatkową funkcją powodujacą, że aplikacja jest bardziej atrakcyjna jest obliczanie długości trasy.
       Aplikacja ukazuje na mapie punkt początkowy i końcowy oraz współrzędne geograficzne.
+      
       ![obraz](https://user-images.githubusercontent.com/83244425/121745951-6255d780-cb05-11eb-9f96-c84886ba0abc.png)
 
         
